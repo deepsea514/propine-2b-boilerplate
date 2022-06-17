@@ -16,17 +16,6 @@ transactions.map(transaction => {
     }
 })
 
-
-
-// const tokenBalances: TokenBalance[] = Object.keys(tokens).map(token => {
-//     return {
-//         token: token,
-//         amount: tokens[token],
-//         price: 0
-//     }
-// });
-// console.log(tokenBalances)
-
 Promise.all(Object.keys(tokens).map(async token => {
     const tokenBalance: TokenBalance = {
         token: token,
@@ -40,6 +29,7 @@ Promise.all(Object.keys(tokens).map(async token => {
                 params: {
                     fsym: token,
                     tsyms: 'USD',
+                    // Service is not free.
                     api_key: '970c8101d0fb0a15d9df839fa504f1070f56f0ffa4c55d6314a74f5f5715ae2e'
                 }
             })
